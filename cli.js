@@ -28,17 +28,15 @@ if (argv.version || argv.v) {
   console.log(pkg.version);
 } else if (argv.help || argv.h || argv._.length === 0) {
   help();
+} else if (argv._.length < 2) {
+  process.stderr.write('More than 2 URLs required.\n', function() {
+    process.exit(1);
+  });
+} else if (variable === undefined || variable === true) {
+  process.stderr.write('--variable <variable> required.\n', function() {
+    process.exit(1);
+  });
 } else {
-  if (argv._.length < 2) {
-    console.error('More than 2 URLs required.');
-    process.exit(1);
-  }
-
-  if (variable === undefined || variable === true) {
-    console.error('--variable <variable> required.');
-    process.exit(1);
-  }
-
   var urls = argv._.map(function(el) {
     return '' + el;
   });
