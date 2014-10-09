@@ -35,7 +35,7 @@ test('scriptFallbackFromUrls()', function(t) {
 
   t.throws(fallbackFromUrls.bind(null, 'a', 'b'), /second argument/, specs[4]);
 
-  t.throws(fallbackFromUrls.bind(null, 'a', [0]), /second argument/, specs[5]);
+  t.throws(fallbackFromUrls.bind(null, 'a', [1, true]), /second argument/, specs[5]);
 
   t.throws(fallbackFromUrls.bind(null, 'a', ['b']), /two/, specs[6]);
 });
