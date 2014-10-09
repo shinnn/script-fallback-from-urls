@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "test": "gulp test",
-    "coverage": "istanbul cover test.js"
+    "coverage": "istanbul cover test.js",
+    "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
   },
   "author": {
     "name": "Shinnosuke Watanabe",
@@ -55,6 +56,8 @@
     "gulp-jsonlint": "^0.1.0",
     "gulp-load-plugins": "^0.7.0",
     "gulp-rename": "^1.2.0",
+    "istanbul": "^0.3.2",
+    "istanbul-coveralls": "^1.0.1",
     "jshint-stylish": "^1.0.0",
     "merge-stream": "^0.1.6",
     "require-main": "^0.1.1",
