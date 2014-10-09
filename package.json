@@ -1,0 +1,65 @@
+{
+  "name": "script-fallback-from-urls",
+  "version": "0.0.0",
+  "description": "Create script tags to load a JavaScript file with single or multiple fallbacks",
+  "main": "./dist/script-fallback-from-urls-cjs.js",
+  "bin": "./cli.js",
+  "files": [
+    "cli.js",
+    "dist/script-fallback-from-urls-cjs.js",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "gulp test",
+    "coverage": "istanbul cover test.js"
+  },
+  "author": {
+    "name": "Shinnosuke Watanabe",
+    "email": "snnskwtnb@gmail.com",
+    "url": "https://github.com/shinnn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinnn/script-fallback-from-urls.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shinnn/script-fallback-from-urls/issues"
+  },
+  "homepage": "https://github.com/shinnn/script-fallback-from-urls",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/shinnn/script-fallback-from-urls/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "url",
+    "script",
+    "html",
+    "tag",
+    "fallback",
+    "safety",
+    "browser",
+    "client-side"
+  ],
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "minimist": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.1.1",
+    "gulp-jscs": "^1.1.2",
+    "gulp-jshint": "^1.8.5",
+    "gulp-jsonlint": "^0.1.0",
+    "gulp-load-plugins": "^0.7.0",
+    "gulp-rename": "^1.2.0",
+    "jshint-stylish": "^1.0.0",
+    "merge-stream": "^0.1.6",
+    "require-main": "^0.1.1",
+    "rimraf": "^2.2.8",
+    "tape": "^3.0.0",
+    "to-camel-case": "^0.2.1"
+  }
+}

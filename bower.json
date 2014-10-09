@@ -1,0 +1,38 @@
+{
+  "name": "script-fallback-from-urls",
+  "version": "1.0.0",
+  "description": "Create script tags to load a JavaScript file with single or multiple fallbacks",
+  "keywords": [
+    "url",
+    "script",
+    "html",
+    "tag",
+    "fallback",
+    "safety"
+  ],
+  "main": "dist/script-fallback-from-urls.js",
+  "homepage": "https://github.com/shinnn/script-fallback-from-urls",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shinnn/script-fallback-from-urls.git"
+  },
+  "authors": [
+    {
+      "name": "Shinnosuke Watanabe",
+      "email": "snnskwtnb@gmail.com",
+      "url": "https://github.com/shinnn"
+    }
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "*.yml",
+    "node_modules",
+    "src",
+    "dist/script-fallback-from-urls-cjs.js",
+    "test.js",
+    "gulpfile.js",
+    "package.json",
+    "component.json"
+  ]
+}
