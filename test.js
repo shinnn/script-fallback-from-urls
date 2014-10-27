@@ -3,7 +3,7 @@
 
 var spawn = require('child_process').spawn;
 
-var fallbackFromUrls = require('require-main')();
+var fallbackFromUrls = require('./');
 var test = require('tape');
 
 var pkg = require('./package.json');
