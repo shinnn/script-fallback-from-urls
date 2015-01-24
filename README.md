@@ -1,9 +1,11 @@
 # script-fallback-from-urls
 
+[![NPM version](https://img.shields.io/npm/v/script-fallback-from-urls.svg?style=flat)](https://www.npmjs.com/package/script-fallback-from-urls)
+[![Bower version](https://img.shields.io/bower/v/script-fallback-from-urls.svg?style=flat)](https://github.com/shinnn/script-fallback-from-urls/releases)
 [![Build Status](https://travis-ci.org/shinnn/script-fallback-from-urls.svg?branch=master)](https://travis-ci.org/shinnn/script-fallback-from-urls)
-[![Build status](https://ci.appveyor.com/api/projects/status/5m4u2h2ln3qb2mq2)](https://ci.appveyor.com/project/ShinnosukeWatanabe/script-fallback-from-urls)
-[![Coverage Status](https://img.shields.io/coveralls/shinnn/script-fallback-from-urls.svg)](https://coveralls.io/r/shinnn/script-fallback-from-urls)
-[![devDependency Status](https://david-dm.org/shinnn/script-fallback-from-urls/dev-status.svg)](https://david-dm.org/shinnn/script-fallback-from-urls#info=devDependencies)
+[![Build status](https://ci.appveyor.com/api/projects/status/5m4u2h2ln3qb2mq2?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/script-fallback-from-urls)
+[![Coverage Status](https://img.shields.io/coveralls/shinnn/script-fallback-from-urls.svg?style=flat)](https://coveralls.io/r/shinnn/script-fallback-from-urls)
+[![devDependency Status](https://img.shields.io/david/dev/shinnn/script-fallback-from-urls.svg?style=flat&label=devDeps)](https://david-dm.org/shinnn/script-fallback-from-urls#info=devDependencies)
 
 Create HTML tags to load a JavaScript file safely
 
@@ -27,13 +29,13 @@ yields:
 
 ### Package managers
 
-#### [npm](https://www.npmjs.org/) [![NPM version](https://badge.fury.io/js/script-fallback-from-urls.svg)](https://www.npmjs.org/package/script-fallback-from-urls)
+#### [npm](https://www.npmjs.com/)
 
 ```sh
 npm i --save script-fallback-from-urls
 ```
 
-#### [Bower](http://bower.io/) [![Bower version](https://badge.fury.io/bo/script-fallback-from-urls.svg)](https://github.com/shinnn/script-fallback-from-urls/releases)
+#### [Bower](http://bower.io/)
 
 ```sh
 bower i --save script-fallback-from-urls
@@ -92,7 +94,7 @@ scriptFallbackFromUrls('window.THREE', [
 
 ## CLI
 
-You can use this module as a CLI tool by installing it [globally](https://www.npmjs.org/doc/files/npm-folders.html#global-installation).
+You can use this module as a CLI tool by installing it [globally](https://docs.npmjs.com/files/folders#global-installation).
 
 ```sh
 npm install -g inline-source-map-comment
@@ -123,6 +125,6 @@ $ script-fallback-from-urls http://d3js.org/d3.v3.min.js path/to/local/d3.v3.min
 
 ## License
 
-Copyright (c) 2014 [Shinnosuke Watanabe](https://github.com/shinnn)
+Copyright (c) [Shinnosuke Watanabe](https://github.com/shinnn)
 
 Licensed under [the MIT License](./LICENSE).
