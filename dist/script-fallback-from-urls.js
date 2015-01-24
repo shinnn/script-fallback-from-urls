@@ -1,21 +1,29 @@
 /*!
- * script-fallback-from-urls.js | MIT (c) Shinnosuke Watanabe
+ * script-fallback-from-urls | MIT (c) Shinnosuke Watanabe
  * https://github.com/shinnn/script-fallback-from-urls
 */
 !function() {
 'use strict';
 
-var urlError = new TypeError('The second argument should be an array of URL strings.');
+var MODULE_NAME = 'script-fallback-from-urls';
+var urlErrMsg = 'The second argument to ' + MODULE_NAME + ' must be an array of URL strings.';
 
 function scriptFallbackFromUrls(variable, urls, options) {
   if (typeof variable !== 'string') {
-    throw new TypeError('The first argument should be a string.');
+    throw new TypeError(
+      variable +
+      ' is not a string. The first argument to ' + MODULE_NAME + ' must be a string.'
+    );
   }
   if (!Array.isArray(urls)) {
-    throw urlError;
+    throw new TypeError(urls + ' is not an array. ' + urlErrMsg);
   }
   if (urls.length < 2) {
-    throw new Error('The second argument should be an array which contains more than two elements.');
+    throw new Error(
+      'The second argument to ' +
+      MODULE_NAME +
+      ' must be an array which contains more than two elements.'
+    );
   }
 
   options = options || {};
@@ -25,27 +33,35 @@ function scriptFallbackFromUrls(variable, urls, options) {
     min = true;
   }
 
-  var html;
-
-  for (var i = 0; i < urls.length; i++) {
-    if (typeof urls[i] !== 'string') {
-      throw urlError;
-    }
-
-    if (i === 0) {
-      html = '<script src="' + urls[0] + '"></script>';
-    } else {
-      html += '<script>' + variable + '||document.write(\'' + urls[i] + '\')' +
-      (min ? '' : ';') +
-      '</script>';
-    }
-
-    if (!min) {
-      html += '\n';
-    }
+  var semicolon;
+  if (!min) {
+    semicolon = ';';
+  } else {
+    semicolon = '';
   }
 
-  return html;
+  var lines = ['<script src="' + urls[0] + '"></script>'];
+
+  for (var i = 1; i < urls.length; i++) {
+    if (typeof urls[i] !== 'string') {
+      throw new TypeError(urls[i] + ' is not a string. ' + urlErrMsg);
+    }
+
+    lines.push(
+      '<script>' +
+      variable + '||document.write(\'' + urls[i] + '\')' + semicolon +
+      '</script>'
+    );
+  }
+
+  var newline;
+  if (!min) {
+    newline = '\n';
+  } else {
+    newline = '';
+  }
+
+  return lines.join(newline);
 }
 
 window.scriptFallbackFromUrls = scriptFallbackFromUrls;

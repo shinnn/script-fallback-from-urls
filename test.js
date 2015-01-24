@@ -8,9 +8,9 @@ var test = require('tape');
 
 var pkg = require('./package.json');
 
-var expected = '<script src="b"></script><script>a||document.write(\'c\')</script>';
-var expectedLong = '<script src="b"></script><script>a||document.write(\'c\')</script><script>a||document.write(\'d\')</script>';
-var expectedUncompressed = '<script src="b"></script>\n<script>a||document.write(\'c\');</script>\n';
+var expectedUncompressed = '<script src="b"></script>\n<script>a||document.write(\'c\');</script>';
+var expected = expectedUncompressed.replace(/(\n|;)/g, '');
+var expectedLong = expected + '<script>a||document.write(\'d\')</script>';
 
 test('scriptFallbackFromUrls()', function(t) {
   var specs = [
@@ -43,8 +43,8 @@ test('scriptFallbackFromUrls()', function(t) {
 test('"script-fallback-from-urls" command', function(t) {
   var specs = [
     'should print script tag with a fallback.',
-    'should accept --var alias.',
-    'should accept -V alias.',
+    'should use --var as an alias of --variable.',
+    'should use -V as an alias of --variable.',
     'should print uncompressed HTML using --no-min flag.',
     'should fail when --variable is not used.',
     'should print message to stderr when --variable is not used.',
@@ -53,9 +53,9 @@ test('"script-fallback-from-urls" command', function(t) {
     'should fail when only one URL is specified.',
     'should print message to stderr when only one URL is specified.',
     'should print usage information using --help flag.',
-    'should accept -h alias.',
+    'should use -h as an alias of --help.',
     'should print version number using --version flag.',
-    'should accept -v alias.'
+    'should use -v as an alias of --version.'
   ];
 
   t.plan(specs.length);
@@ -66,25 +66,21 @@ test('"script-fallback-from-urls" command', function(t) {
     });
   };
 
-  cmd(['--variable', 'a', 'b', 'c'])
-    .stdout.on('data', function(data) {
-      t.equal(data.toString(), expected + '\n', specs[0]);
-    });
+  cmd(['--variable', 'a', 'b', 'c']).stdout.on('data', function(data) {
+    t.equal(data.toString(), expected + '\n', specs[0]);
+  });
 
-  cmd(['b', 'c', 'd', '--var', 'a'])
-    .stdout.on('data', function(data) {
-      t.equal(data.toString(), expectedLong + '\n', specs[1]);
-    });
+  cmd(['b', 'c', 'd', '--var', 'a']).stdout.on('data', function(data) {
+    t.equal(data.toString(), expectedLong + '\n', specs[1]);
+  });
 
-  cmd(['-V', 'a', 'b', 'c', 'd'])
-    .stdout.on('data', function(data) {
-      t.equal(data.toString(), expectedLong + '\n', specs[2]);
-    });
+  cmd(['-V', 'a', 'b', 'c', 'd']).stdout.on('data', function(data) {
+    t.equal(data.toString(), expectedLong + '\n', specs[2]);
+  });
 
-  cmd(['b', 'c', '--variable', 'a', '--no-min'])
-    .stdout.on('data', function(data) {
-      t.equal(data.toString(), expectedUncompressed + '\n', specs[3]);
-    });
+  cmd(['b', 'c', '--variable', 'a', '--no-min']).stdout.on('data', function(data) {
+    t.equal(data.toString(), expectedUncompressed + '\n', specs[3]);
+  });
 
   cmd(['a', 'b'])
     .on('close', function(code) {
@@ -113,12 +109,11 @@ test('"script-fallback-from-urls" command', function(t) {
     })
     .setEncoding('utf8');
 
-  cmd(['--help'])
-    .stdout.on('data', function(data) {
-      t.ok(/Usage/.test(data.toString()), specs[10]);
-    });
+  cmd(['--help']).stdout.on('data', function(data) {
+    t.ok(/Usage/.test(data.toString()), specs[10]);
+  });
 
-  cmd(['--h'])
+  cmd(['-h'])
     .stdout.on('data', function(data) {
       t.ok(/Usage/.test(data.toString()), specs[11]);
     });
@@ -128,7 +123,7 @@ test('"script-fallback-from-urls" command', function(t) {
       t.equal(data.toString(), pkg.version + '\n', specs[12]);
     });
 
-  cmd(['--v'])
+  cmd(['-v'])
     .stdout.on('data', function(data) {
       t.equal(data.toString(), pkg.version + '\n', specs[13]);
     });
