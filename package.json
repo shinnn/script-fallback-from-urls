@@ -45,7 +45,8 @@
   ],
   "dependencies": {
     "chalk": "^0.5.1",
-    "minimist": "^1.1.0"
+    "minimist": "^1.1.0",
+    "sum-up": "^1.0.0"
   },
   "devDependencies": {
     "gulp": "^3.8.9",
