@@ -1,6 +1,5 @@
 {
   "name": "script-fallback-from-urls",
-  "version": "1.0.0",
   "description": "Create script tags to load a JavaScript file with single or multiple fallbacks",
   "keywords": [
     "url",
@@ -26,13 +25,11 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "*.js",
+    "*.json",
     "*.yml",
+    "dist/*.js",
     "node_modules",
-    "src",
-    "dist/script-fallback-from-urls-cjs.js",
-    "test.js",
-    "gulpfile.js",
-    "package.json",
-    "component.json"
+    "src"
   ]
 }

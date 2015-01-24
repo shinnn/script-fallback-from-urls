@@ -2,12 +2,11 @@
   "name": "script-fallback-from-urls",
   "version": "1.0.0",
   "description": "Create script tags to load a JavaScript file with single or multiple fallbacks",
-  "main": "./dist/script-fallback-from-urls-cjs.js",
-  "bin": "./cli.js",
+  "main": "dist/script-fallback-from-urls-cjs.js",
+  "bin": "cli.js",
   "files": [
     "cli.js",
-    "dist/script-fallback-from-urls-cjs.js",
-    "LICENSE"
+    "dist/script-fallback-from-urls-cjs.js"
   ],
   "scripts": {
     "test": "gulp test",
@@ -19,14 +18,7 @@
     "email": "snnskwtnb@gmail.com",
     "url": "https://github.com/shinnn"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shinnn/script-fallback-from-urls.git"
-  },
-  "bugs": {
-    "url": "https://github.com/shinnn/script-fallback-from-urls/issues"
-  },
-  "homepage": "https://github.com/shinnn/script-fallback-from-urls",
+  "repository": "shinnn/script-fallback-from-urls",
   "licenses": [
     {
       "type": "MIT",
@@ -49,20 +41,22 @@
     "sum-up": "^1.0.0"
   },
   "devDependencies": {
-    "gulp": "^3.8.9",
+    "gulp": "^3.8.10",
     "gulp-footer": "^1.0.5",
     "gulp-header": "^1.2.2",
-    "gulp-jscs": "^1.2.1",
-    "gulp-jshint": "^1.8.5",
-    "gulp-jsonlint": "^1.0.1",
-    "gulp-load-plugins": "^0.7.0",
+    "gulp-jscs": "^1.4.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-jsonlint": "^1.0.2",
+    "gulp-load-plugins": "^0.8.0",
     "gulp-rename": "^1.2.0",
-    "istanbul": "^0.3.2",
+    "gulp-size": "^1.2.0",
+    "istanbul": "^0.3.5",
     "istanbul-coveralls": "^1.0.1",
     "jshint-stylish": "^1.0.0",
-    "merge-stream": "^0.1.6",
+    "merge-stream": "^0.1.7",
     "rimraf": "^2.2.8",
-    "tape": "^3.0.1",
+    "tape": "^3.4.0",
+    "tiny-npm-license": "^1.0.0",
     "to-camel-case": "^0.2.1"
   }
 }
