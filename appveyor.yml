@@ -1,6 +1,8 @@
 init:
   - git config --global core.autocrlf input
 
+shallow_clone: true
+
 version: '{build}'
 
 environment:
@@ -17,3 +19,6 @@ build: off
 test_script:
   - ps: 'node test.js # PowerShell'
   - cmd: node test.js
+
+cache:
+  - node_modules
