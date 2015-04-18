@@ -1,11 +1,12 @@
 # script-fallback-from-urls
 
-[![NPM version](https://img.shields.io/npm/v/script-fallback-from-urls.svg?style=flat)](https://www.npmjs.com/package/script-fallback-from-urls)
-[![Bower version](https://img.shields.io/bower/v/script-fallback-from-urls.svg?style=flat)](https://github.com/shinnn/script-fallback-from-urls/releases)
+[![NPM version](https://img.shields.io/npm/v/script-fallback-from-urls.svg)](https://www.npmjs.com/package/script-fallback-from-urls)
+[![Bower version](https://img.shields.io/bower/v/script-fallback-from-urls.svg)](https://github.com/shinnn/script-fallback-from-urls/releases)
 [![Build Status](https://travis-ci.org/shinnn/script-fallback-from-urls.svg?branch=master)](https://travis-ci.org/shinnn/script-fallback-from-urls)
 [![Build status](https://ci.appveyor.com/api/projects/status/5m4u2h2ln3qb2mq2?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/script-fallback-from-urls)
-[![Coverage Status](https://img.shields.io/coveralls/shinnn/script-fallback-from-urls.svg?style=flat)](https://coveralls.io/r/shinnn/script-fallback-from-urls)
-[![devDependency Status](https://img.shields.io/david/dev/shinnn/script-fallback-from-urls.svg?style=flat&label=devDeps)](https://david-dm.org/shinnn/script-fallback-from-urls#info=devDependencies)
+[![Coverage Status](https://img.shields.io/coveralls/shinnn/script-fallback-from-urls.svg?label=cov)](https://coveralls.io/r/shinnn/script-fallback-from-urls)
+[![Dependency Status](https://img.shields.io/david/shinnn/script-fallback-from-urls.svg?label=deps)](https://david-dm.org/shinnn/script-fallback-from-urls)
+[![devDependency Status](https://img.shields.io/david/dev/shinnn/script-fallback-from-urls.svg?label=devDeps)](https://david-dm.org/shinnn/script-fallback-from-urls#info=devDependencies)
 
 Create HTML tags to load a JavaScript file safely
 
@@ -125,6 +126,6 @@ $ script-fallback-from-urls http://d3js.org/d3.v3.min.js path/to/local/d3.v3.min
 
 ## License
 
-Copyright (c) [Shinnosuke Watanabe](https://github.com/shinnn)
+Copyright (c) 2014 - 2015 [Shinnosuke Watanabe](https://github.com/shinnn)
 
 Licensed under [the MIT License](./LICENSE).
