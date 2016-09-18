@@ -10,17 +10,14 @@
     "safety"
   ],
   "main": "dist/script-fallback-from-urls.js",
+  "moduleType": "globals",
   "homepage": "https://github.com/shinnn/script-fallback-from-urls",
   "repository": {
     "type": "git",
     "url": "git://github.com/shinnn/script-fallback-from-urls.git"
   },
   "authors": [
-    {
-      "name": "Shinnosuke Watanabe",
-      "email": "snnskwtnb@gmail.com",
-      "url": "https://github.com/shinnn"
-    }
+    "Shinnosuke Watanabe (https://github.com/shinnn)"
   ],
   "license": "MIT",
   "ignore": [
