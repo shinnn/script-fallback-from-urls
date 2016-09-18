@@ -4,15 +4,15 @@
 [![Bower version](https://img.shields.io/bower/v/script-fallback-from-urls.svg)](https://github.com/shinnn/script-fallback-from-urls/releases)
 [![Build Status](https://travis-ci.org/shinnn/script-fallback-from-urls.svg?branch=master)](https://travis-ci.org/shinnn/script-fallback-from-urls)
 [![Build status](https://ci.appveyor.com/api/projects/status/5m4u2h2ln3qb2mq2?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/script-fallback-from-urls)
-[![Coverage Status](https://img.shields.io/coveralls/shinnn/script-fallback-from-urls.svg?label=cov)](https://coveralls.io/r/shinnn/script-fallback-from-urls)
-[![Dependency Status](https://img.shields.io/david/shinnn/script-fallback-from-urls.svg?label=deps)](https://david-dm.org/shinnn/script-fallback-from-urls)
-[![devDependency Status](https://img.shields.io/david/dev/shinnn/script-fallback-from-urls.svg?label=devDeps)](https://david-dm.org/shinnn/script-fallback-from-urls#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/github/shinnn/script-fallback-from-urls/badge.svg?branch=master)](https://coveralls.io/github/shinnn/script-fallback-from-urls?branch=master)
+[![dependencies Status](https://david-dm.org/shinnn/script-fallback-from-urls/status.svg)](https://david-dm.org/shinnn/script-fallback-from-urls)
+[![devDependencies Status](https://david-dm.org/shinnn/script-fallback-from-urls/dev-status.svg)](https://david-dm.org/shinnn/script-fallback-from-urls?type=dev)
 
 Create HTML tags to load a JavaScript file safely
 
 ```javascript
 var html = scriptFallbackFromUrls('window.angular', [
-  '//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js',
+  '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js',
   'path/to/local/angular.min.js'
 ], {min: false});
 
@@ -22,7 +22,7 @@ console.log(html);
 yields:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script>window.angular||document.write('path/to/local/angular.min.js');</script>
 ```
 
@@ -32,20 +32,14 @@ yields:
 
 #### [npm](https://www.npmjs.com/)
 
-```sh
+```
 npm i --save script-fallback-from-urls
 ```
 
-#### [Bower](http://bower.io/)
+#### [Bower](https://bower.io/)
 
-```sh
-bower i --save script-fallback-from-urls
 ```
-
-#### [Duo](http://duojs.org/)
-
-```javascript
-var scriptFallbackFromUrls = require('shinnn/script-fallback-from-urls');
+bower i --save script-fallback-from-urls
 ```
 
 ## API
@@ -65,11 +59,11 @@ It is highly recommended that the last URL points at a local copy on your server
 
 ```javascript
 scriptFallbackFromUrls('window.THREE', [
-  '//ajax.googleapis.com/ajax/libs/threejs/r67/three.min.js',
-  '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js',
+  '//ajax.googleapis.com/ajax/libs/threejs/r76/three.min.js',
+  '//cdnjs.cloudflare.com/ajax/libs/three.js/r76/three.min.js',
   'path/to/local/three.min.js'
 ]);
-//=> <script src="//ajax.googleapis.com/ajax/libs/threejs/r67/three.min.js"></script><script>window.THREE||document.write(\'//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js\')</script><script>window.THREE||document.write(\'path/to/local/three.min.js\')</script>
+//=> <script src="//ajax.googleapis.com/ajax/libs/threejs/r76/three.min.js"></script><script>window.THREE||document.write(\'//cdnjs.cloudflare.com/ajax/libs/three.js/r76/three.min.js\')</script><script>window.THREE||document.write(\'path/to/local/three.min.js\')</script>
 ```
 
 #### option.min
@@ -81,14 +75,14 @@ Adds newlines and semicolons by setting this option `false`.
 
 ```javascript
 scriptFallbackFromUrls('window.THREE', [
-  '//ajax.googleapis.com/ajax/libs/threejs/r67/three.min.js',
-  '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js',
+  '//ajax.googleapis.com/ajax/libs/threejs/r76/three.min.js',
+  '//cdnjs.cloudflare.com/ajax/libs/three.js/r76/three.min.js',
   'path/to/local/three.min.js'
 ], {min: false});
 
 /* =>
-<script src="//ajax.googleapis.com/ajax/libs/threejs/r67/three.min.js"></script>
-<script>window.THREE||document.write('//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js');</script>
+<script src="//ajax.googleapis.com/ajax/libs/threejs/r76/three.min.js"></script>
+<script>window.THREE||document.write('//cdnjs.cloudflare.com/ajax/libs/three.js/r76/three.min.js');</script>
 <script>window.THREE||document.write('path/to/local/three.min.js');</script>
 */
 ```
@@ -126,6 +120,6 @@ $ script-fallback-from-urls http://d3js.org/d3.v3.min.js path/to/local/d3.v3.min
 
 ## License
 
-Copyright (c) 2014 - 2015 [Shinnosuke Watanabe](https://github.com/shinnn)
+Copyright (c) 2014 - 2016 [Shinnosuke Watanabe](https://github.com/shinnn)
 
 Licensed under [the MIT License](./LICENSE).
